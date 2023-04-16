@@ -1,0 +1,41 @@
+.markdown-container {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  code {
+    padding: 2px 5px;
+    color: #d56161;
+    background: #f6f7f9;
+  }
+  .language-container {
+    background: #f6f7f9 !important;
+    .token {
+      color: #690 !important;
+      &.module {
+        color: #07a !important;
+      }
+      &.maybe-class-name {
+        color: black !important;
+      }
+      &.method {
+        &.property-access {
+          color: #dd4a68 !important;
+        }
+      }
+    }
+  }
+  table {
+    width: 100%;
+    border: 1px solid #ebedf1;
+    border-collapse: collapse;
+    th {
+      font-weight: 600;
+      background: #f9fafb;
+    }
+    th,
+    td {
+      padding: 10px 24px;
+      border: 1px solid #ebedf1;
+    }
+  }
+}

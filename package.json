@@ -1,0 +1,43 @@
+{
+  "name": "little-baby",
+  "version": "0.0.0",
+  "private": true,
+  "description": "小婴儿",
+  "author": "yuzhao <sy-zhaoyu@forestar.com.cn>",
+  "scripts": {
+    "prebuild": "npm run generate:webapp-config",
+    "build": "umi build",
+    "build:dev": "cross-env WEBAPP_ENV=dev npm run build",
+    "build:prod": "cross-env WEBAPP_ENV=prod npm run build",
+    "build:test": "cross-env WEBAPP_ENV=test npm run build",
+    "dev": "umi dev",
+    "generate:webapp-config": "tsx ./scripts/generate-webapp-config.ts",
+    "initenv": "cross-env NODE_OPTIONS=--max-old-space-size=8192",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "cross-env PROJECT_PATH_NAME=/zhaoyu/ WEBAPP_NAME=umi4 WEBAPP_ENV=local npm run prebuild && npm run initenv PROJECT_PATH_NAME=/zhaoyu/ WEBAPP_NAME=umi4 WEBAPP_ENV=local npm run dev"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.0.1",
+    "antd": "4.x",
+    "moment": "^2.29.4",
+    "react-markdown": "^7.1.0",
+    "react-syntax-highlighter": "^15.4.5",
+    "remark-gfm": "^3.0.0",
+    "umi": "^4.0.53"
+  },
+  "devDependencies": {
+    "@types/npmlog": "^4.1.4",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/react-syntax-highlighter": "^15.5.6",
+    "@umijs/plugins": "^4.0.53",
+    "chalk": "^5.2.0",
+    "cross-env": "^7.0.3",
+    "npmlog": "^7.0.1",
+    "prettier": "^2",
+    "prettier-plugin-organize-imports": "^2",
+    "prettier-plugin-packagejson": "^2",
+    "typescript": "^4.1.2"
+  }
+}
