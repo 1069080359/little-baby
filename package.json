@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "description": "小婴儿",
+  "homepage": "./",
   "author": "yuzhao <sy-zhaoyu@forestar.com.cn>",
   "scripts": {
     "prebuild": "npm run generate:webapp-config",
@@ -10,6 +11,7 @@
     "build:dev": "cross-env WEBAPP_ENV=dev npm run build",
     "build:prod": "cross-env WEBAPP_ENV=prod npm run build",
     "build:test": "cross-env WEBAPP_ENV=test npm run build",
+    "deploy": "gh-pages -d rain-little-baby",
     "dev": "umi dev",
     "generate:webapp-config": "tsx ./scripts/generate-webapp-config.ts",
     "initenv": "cross-env NODE_OPTIONS=--max-old-space-size=8192",
@@ -34,6 +36,7 @@
     "@umijs/plugins": "^4.0.53",
     "chalk": "^5.2.0",
     "cross-env": "^7.0.3",
+    "gh-pages": "^5.0.0",
     "npmlog": "^7.0.1",
     "prettier": "^2",
     "prettier-plugin-organize-imports": "^2",
