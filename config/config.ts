@@ -14,7 +14,7 @@ const { WEBAPP_ENV = 'prod' } = process.env;
 const WEBAPP_VERSION: string = pkg.version;
 
 // 路由地址类型
-const historyType: 'browser' | 'hash' = 'browser';
+const historyType: 'browser' | 'hash' = 'hash';
 // @ts-ignore
 const isBrowserRouter = historyType === 'browser';
 const isLocal = WEBAPP_ENV === 'local';
@@ -52,7 +52,6 @@ if (WEBAPP_ENV === 'prod') {
 } else if (WEBAPP_ENV === 'dev') {
   devtool = 'cheap-module-source-map';
 }
-
 export default defineConfig({
   outputPath,
   publicPath,
