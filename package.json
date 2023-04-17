@@ -12,6 +12,7 @@
     "build:prod": "cross-env WEBAPP_ENV=prod npm run build",
     "build:test": "cross-env WEBAPP_ENV=test npm run build",
     "deploy": "gh-pages -d rain-little-baby",
+    "deploy:hand": "git subtree push --prefix=rain-little-baby origin gh-pages",
     "dev": "umi dev",
     "generate:webapp-config": "tsx ./scripts/generate-webapp-config.ts",
     "initenv": "cross-env NODE_OPTIONS=--max-old-space-size=8192",
@@ -21,7 +22,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.0.1",
-    "antd": "4.x",
+    "antd": "5.4.1",
     "moment": "^2.29.4",
     "react-markdown": "^7.1.0",
     "react-syntax-highlighter": "^15.4.5",
