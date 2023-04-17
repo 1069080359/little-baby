@@ -6,7 +6,8 @@ const Home = () => {
   return (
     <div>
       <SimpleDesc />
-      - 孕 8 周去医院做第一次 b 超检查。
+      <p>- 25 号回家再做一次检查。</p>
+      <p>- 孕 8 周去医院做第一次 b 超检查。</p>
       <FloatButton type="primary" style={{ right: 24 }} tooltip={<QRCode />} />
     </div>
   );
