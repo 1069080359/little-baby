@@ -63,7 +63,6 @@ export default defineConfig({
   headScripts: [
     `\n/* version:${WEBAPP_VERSION} */\nvar scriptDom=document.createElement('script');scriptDom.src="${publicPath}config/${WebAppConfigJsName}?t="+Date.now();document.head.appendChild(scriptDom);`,
   ],
-  plugins: [require.resolve('@umijs/plugins/dist/antd')],
   alias: {
     '@/config': join(__dirname),
   },
@@ -81,4 +80,32 @@ export default defineConfig({
   antd: {},
   theme,
   npmClient: 'yarn',
+  plugins: [
+    require.resolve('@umijs/plugins/dist/antd'),
+    './src/umi-plugin-reponesive',
+  ],
+  reponesive: {
+    // 设计稿尺寸
+    design: {
+      width: 750,
+      height: 1334,
+    },
+    // 最小尺寸，少于该尺寸，不再进行缩放适配
+    // 跟进设计稿最小字体 宽高 与 页面最小字体计算页面最小宽高
+    min: {
+      width: 642, // 12 / 14 * 750
+      height: 1143, // 12 / 14 * 1334
+    },
+    // 容差，小于 tolerance 配置的宽、高不会再适配
+    tolerance: {
+      width: 100,
+      height: 160,
+    },
+    // 适配模式， both 兼顾宽、高进行适配，哪个缩放值小，使用哪个；width 只根据宽进行缩放适配
+    mode: 'both',
+    // 设计稿字体大小
+    rootValue: 14,
+    // 转换rem后，保存小数位
+    unitPrecision: 2,
+  },
 });

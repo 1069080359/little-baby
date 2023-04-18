@@ -12,7 +12,6 @@ const PregnancyKnowledge = () => {
 
   const renderItem = (item) => {
     const week = weeks().split('.')[0];
-    console.log('item', week);
     return (
       <List.Item>
         <Badge.Ribbon
@@ -39,7 +38,7 @@ const PregnancyKnowledge = () => {
     return (
       <List
         className="pregnancy-knowledge"
-        grid={{ gutter: 16, column: 4 }}
+        grid={{ gutter: 16, column: 2 }}
         dataSource={info[active]}
         rowKey="key"
         renderItem={renderItem}

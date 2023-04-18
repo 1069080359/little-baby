@@ -1,0 +1,21 @@
+html {
+  min-width: ~'@{REPONESIVE_MIN_WIDTH}Px';
+  min-height: ~'@{REPONESIVE_MIN_HEIGHT}Px';
+  font-size: calc(
+    (@REPONESIVE_MIN_WIDTH / @REPONESIVE_DESIGN_WIDTH) * @REPONESIVE_ROOT_VALUE
+  );
+
+  // 大于最小宽度 且 显示区域的宽度和高度之间的最大比例 小于 设计稿的宽高比， 则按照宽度进行缩放
+  @media screen and (min-width: ~'@{REPONESIVE_MIN_WIDTH}Px') and (max-aspect-ratio: ~'@{REPONESIVE_DESIGN_WIDTH}/@{REPONESIVE_DESIGN_HEIGHT}') {
+    font-size: calc(
+      (100vw / @REPONESIVE_DESIGN_WIDTH) * @REPONESIVE_ROOT_VALUE
+    );
+  }
+
+  // 大于最小高度 且 显示区域的宽度和高度之间的最小比例 大于 设计稿的宽高比， 则按照高度进行缩放
+  @media screen and (min-height: ~'@{REPONESIVE_MIN_HEIGHT}Px') and (min-aspect-ratio: ~'@{REPONESIVE_DESIGN_WIDTH}/@{REPONESIVE_DESIGN_HEIGHT}') {
+    font-size: calc(
+      (100vh / @REPONESIVE_DESIGN_HEIGHT) * @REPONESIVE_ROOT_VALUE
+    );
+  }
+}

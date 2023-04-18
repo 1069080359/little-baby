@@ -2,6 +2,7 @@ import { FloatButton } from 'antd';
 import QRCode from './qr-code';
 import SimpleDesc from './simple-desc';
 import PregnancyKnowledge from './pregnancy-knowledge';
+import './style.less';
 
 const Home = () => {
   return (
