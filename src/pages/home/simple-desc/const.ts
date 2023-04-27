@@ -17,9 +17,15 @@ export const descInfo = [
   },
   {
     label: '北京海淀医院',
-    value: '2023年4月15号下午',
+    value: '2023年4月15号下午(Prog[32.6 ng/mL],HCG[133.1 mIU/mL])',
     key: 'hospital-measurement',
-    span: 4,
+    span: 2,
+  },
+  {
+    label: '怀来县妇幼保健院',
+    value: '2023年4月26号下午Prog[18.67 ng/mL],HCG[9471.10 mIU/mL]',
+    key: 'huai-lai-fu-you',
+    span: 2,
   },
   {
     label: '停经时间',
