@@ -6,8 +6,8 @@ const SimpleDesc = () => {
   return (
     <Descriptions
       title="老婆孕期详细信息"
-      layout="vertical"
-      bordered
+      // layout="vertical"
+      // bordered
       column={column}
     >
       {descInfo.map((item) => {
