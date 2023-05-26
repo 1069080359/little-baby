@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { Card, List, Badge, Tabs } from 'antd';
 import { weeks } from '../simple-desc';
-import { pregnancyInstructionsInfo, pregnancyCycleInfo } from './const';
+import {
+  pregnancyInstructionsInfo,
+  pregnancyCycleInfo,
+  pregnancyExamination,
+} from './const';
 import './style.less';
 const PregnancyKnowledge = () => {
   const [active, setActive] = useState<string>('1');
@@ -34,6 +38,7 @@ const PregnancyKnowledge = () => {
     const info = {
       '1': pregnancyInstructionsInfo,
       '2': pregnancyCycleInfo,
+      '3': pregnancyExamination,
     };
     return (
       <List
@@ -55,6 +60,11 @@ const PregnancyKnowledge = () => {
     {
       key: '2',
       label: '孕周期',
+      children: renderList(),
+    },
+    {
+      key: '3',
+      label: '孕检查',
       children: renderList(),
     },
   ];
